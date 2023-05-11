@@ -1,0 +1,143 @@
+.preloader {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 100%;
+  background-color: var(--color-white);
+}
+
+#loader {
+  --background: #62ABFF;
+  --front-color: #8052ff;
+  --back-color: #C3C8DE;
+  --text-color: #414856;
+  width: 64px;
+  height: 64px;
+  border-radius: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loader svg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loader svg circle {
+  position: absolute;
+  fill: none;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: rotate(-100deg);
+  transform-origin: center;
+}
+
+#loader svg circle.back {
+  stroke: var(--back-color);
+}
+
+#loader svg circle.front {
+  stroke: var(--front-color);
+}
+
+#loader svg.circle-outer {
+  height: 72px;
+  width: 72px;
+}
+
+#loader svg.circle-outer circle {
+  stroke-dasharray: 120;
+}
+
+#loader svg.circle-outer circle.back {
+  -webkit-animation: circle-outer 1.8s ease infinite 0.3s;
+  animation: circle-outer 1.8s ease infinite 0.3s;
+}
+
+#loader svg.circle-outer circle.front {
+  -webkit-animation: circle-outer 1.8s ease infinite 0.15s;
+  animation: circle-outer 1.8s ease infinite 0.15s;
+}
+
+#loader .text {
+  position: absolute;
+  bottom: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+}
+
+#loader .text::before,
+#loader .text::after {
+  content: attr(data-text);
+}
+
+#loader .text::before {
+  color: var(--text-color);
+}
+
+#loader .text::after {
+  color: var(--front-color);
+  -webkit-animation: text-animation 3.6s ease infinite;
+  animation: text-animation 3.6s ease infinite;
+  position: absolute;
+  left: 0;
+}
+
+@keyframes circle-outer {
+  0% {
+    transform: rotate(25deg);
+  }
+
+  20% {
+    transform: rotate(300deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  80% {
+    transform: rotate(25deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes circle-outer {
+  0% {
+    transform: rotate(25deg);
+  }
+
+  20% {
+    transform: rotate(300deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  80% {
+    transform: rotate(25deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
