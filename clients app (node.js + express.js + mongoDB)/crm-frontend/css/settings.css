@@ -1,0 +1,140 @@
+@font-face {
+  font-family: 'Open-sans';
+  src: local('OpenSansRegular'), local('OpenSans-Regular'), url('../fonts/OpenSans-Regular.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Open-sans';
+  src: local('OpenSansSemiBold'), local('OpenSans-SemiBold'), url('../fonts/OpenSans-SemiBold.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Open-sans';
+  src: local('OpenSansBold'), local('OpenSans-Bold'), url('../fonts/OpenSans-Bold.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+*:focus-visible {
+  outline: 0;
+}
+
+:root {
+  --color-mercury: #E5E5E5;
+  --color-white: white;
+  --color-silver-chalise: #B0B0B0;
+  --color-mine-shaft: #333333;
+  --color-heliotrope: #9873FF;
+  --color-gray-suit: #C8C5D1;
+  --color-mischka: #E7E5EB;
+  --color-athens-gray: #F4F3F6;
+  --color-burnt-sienna: #F06A4D;
+  --color-melrose: #B89EFF;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-mercury);
+  min-width: 320px;
+  font-family: 'Open-sans', sans-serif;
+}
+
+.container {
+  max-width: 1024px;
+  padding: 0 20px;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.site-modal {
+  position: fixed;
+  overflow-x: auto;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000080;
+  opacity: 0;
+}
+
+.site-modal__content {
+  max-width: 450px;
+  cursor: auto;
+  position: absolute;
+  padding: 25px 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  box-shadow: 0 0 35px rgba(0, 0, 0, .15);
+  background-color: var(--color-white);
+  opacity: 0;
+}
+
+.site-btn {
+  background-color: var(--color-heliotrope);
+  color: var(--color-white);
+}
+
+.site-tooltip {
+  position: absolute;
+  top: -41px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+  padding: 7px 15px;
+  background-color: var(--color-mine-shaft);
+}
+
+.site-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translateX(-50%);
+  clip-path: polygon(100% 0, 0 0, 51% 100%);
+  background-color: var(--color-mine-shaft);
+}
